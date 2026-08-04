@@ -1,0 +1,245 @@
+/* assistance-styles.css */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Message bubbles */
+.message-bubble-user {
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble-bot {
+  border-bottom-left-radius: 4px;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading animation */
+.loading-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.loading-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: loading 1.4s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes loading {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+
+
+/* Add to your existing globals.css or assistance-styles.css */
+/* Chatbot Modal Styles */
+.chatbot-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.chatbot-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.chatbot-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+}
+
+.chatbot-floating-btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.thinking-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 8px 0;
+}
+
+.thinking-dot {
+  width: 8px;
+  height: 8px;
+  background: #6b7280;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.thinking-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.thinking-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Category badges */
+.category-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-badge:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.category-badge.active {
+  background: #667eea;
+  color: white;
+}
+
+/* FAQ questions list */
+.faq-question {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f9fafb;
+}
+
+/* Message bubbles */
+.message-bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  margin: 8px 0;
+  word-wrap: break-word;
+}
+
+.message-bubble.user {
+  background: #667eea;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.bot {
+  background: #f3f4f6;
+  color: #374151;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
